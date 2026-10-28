@@ -6,6 +6,7 @@ public class PlayerController : MonoBehaviour
     public float thrustForce = 1f;
     public float maxSpeed = 5f;
     Rigidbody2D rb;
+    public GameObject boosterFlame;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -32,6 +33,15 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
             }
         }
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            boosterFlame.SetActive(true);
+        }
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            boosterFlame.SetActive(false);
+        }    
     }
 
     void OnCollisionEnter2D(Collision2D collision)
