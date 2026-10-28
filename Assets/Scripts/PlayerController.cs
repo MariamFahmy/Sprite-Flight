@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 public class PlayerController : MonoBehaviour
 {
     public float thrustForce = 1f;
+    public float maxSpeed = 5f;
     Rigidbody2D rb;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -24,6 +25,12 @@ public class PlayerController : MonoBehaviour
             // Move player in direction of mouse
             transform.up = direction;
             rb.AddForce(direction * thrustForce);
+
+            // Clamp player's maximum speed
+            if (rb.linearVelocity.magnitude > maxSpeed)
+            {
+                rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
+            }
         }
     }
 
