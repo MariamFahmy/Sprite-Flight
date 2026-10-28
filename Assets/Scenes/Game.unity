@@ -232,6 +232,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerController
   thrustForce: 1
   maxSpeed: 5
+  boosterFlame: {fileID: 534748212}
 --- !u!4 &251547709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3519793513995498349, guid: a8e2a6d6a3f9c8147aa958e0713e1a77, type: 3}
@@ -289,7 +290,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &534748213
 Transform:
   m_ObjectHideFlags: 0
@@ -355,7 +356,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 0.7830189, g: 0.2175244, b: 0.06278926, a: 1}
+  m_Color: {r: 0.7830189, g: 0.2175244, b: 0.06278926, a: 0.5529412}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
