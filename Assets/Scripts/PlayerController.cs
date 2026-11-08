@@ -25,17 +25,35 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        UpdateScore();
+
+        MovePlayer();
+
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+        {
+            boosterFlame.SetActive(true);
+        }
+        else if (Mouse.current.leftButton.wasReleasedThisFrame)
+        {
+            boosterFlame.SetActive(false);
+        }    
+    }
+
+    void UpdateScore()
+    {
         elapsedTime += Time.deltaTime;
         score = Mathf.FloorToInt(elapsedTime * scoreMultiplier);
         scoreText.text = "Score: " + score;
-        Debug.Log("Score: " + score);
+    }
 
+    void MovePlayer()
+    {
         if (Mouse.current.leftButton.isPressed)
         {
             // Calculate mouse direction
             Vector3 mousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.value);
             Vector2 direction = (mousePos - transform.position).normalized;
-            
+
             // Move player in direction of mouse
             transform.up = direction;
             rb.AddForce(direction * thrustForce);
@@ -46,15 +64,6 @@ public class PlayerController : MonoBehaviour
                 rb.linearVelocity = rb.linearVelocity.normalized * maxSpeed;
             }
         }
-
-        if (Mouse.current.leftButton.wasPressedThisFrame)
-        {
-            boosterFlame.SetActive(true);
-        }
-        else if (Mouse.current.leftButton.wasReleasedThisFrame)
-        {
-            boosterFlame.SetActive(false);
-        }    
     }
 
     void OnCollisionEnter2D(Collision2D collision)
