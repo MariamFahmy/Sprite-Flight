@@ -233,6 +233,7 @@ MonoBehaviour:
   thrustForce: 1
   maxSpeed: 5
   scoreMultiplier: 10
+  uiDocument: {fileID: 940964433}
   boosterFlame: {fileID: 534748212}
 --- !u!4 &251547709 stripped
 Transform:
