@@ -235,6 +235,7 @@ MonoBehaviour:
   scoreMultiplier: 10
   uiDocument: {fileID: 940964433}
   boosterFlame: {fileID: 534748212}
+  explosionEffect: {fileID: 8047537892283006776, guid: fac284a7a20f24c4488076d3bd631c44, type: 3}
 --- !u!4 &251547709 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3519793513995498349, guid: a8e2a6d6a3f9c8147aa958e0713e1a77, type: 3}

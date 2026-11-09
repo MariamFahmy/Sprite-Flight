@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
 
     Rigidbody2D rb;
     public GameObject boosterFlame;
+    public GameObject explosionEffect;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -68,6 +69,7 @@ public class PlayerController : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(explosionEffect, transform.position, transform.rotation);
         Destroy(gameObject);
     }
 }
